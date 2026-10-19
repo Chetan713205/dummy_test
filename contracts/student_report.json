@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "StudentReport",
+  "type": "object",
+  "required": ["student", "marks", "total", "average"],
+  "properties": {
+    "student": { "$ref": "student.json" },
+    "marks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["subject", "marks"],
+        "properties": {
+          "subject": { "type": "string" },
+          "marks": { "type": "number" }
+        }
+      }
+    },
+    "total": { "type": "number" },
+    "average": { "type": "number" }
+  }
+}

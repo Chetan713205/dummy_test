@@ -29,9 +29,13 @@ class Marks(BaseModel):
     subject_id: int
     marks: float = Field(..., ge=0, le=100)
 
+class ReportMark(BaseModel):
+    subject: str
+    marks: float
+
 class StudentReport(BaseModel):
     student: Student
-    marks: List[dict]
+    marks: List[ReportMark]
     total: float
     average: float
 
